@@ -1,0 +1,62 @@
+package bingo;
+import java.util.*;
+
+/**
+ *
+ * @author DAM119
+ */
+public class Bingo {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        int [] tirada;
+        int contirada;
+        int jugadores;
+        int [][] carton;
+        int [][] repetidos;
+        Random rnd = new Random();
+        
+        //Introducimos número de jugadores
+        System.out.println("----------BINGO----------");
+        System.out.println("Cuántos jugadores van a jugar?");
+        jugadores=teclado.nextInt();
+        carton=new int [jugadores+1][15];
+        //Asignamos cartones a cada jugador
+        System.out.println("------------------------------");
+        for (int i = 1; i <= jugadores; i++) {
+        System.out.println("Jugador "+i);
+        System.out.println("Su cartón es:");
+            for (int j = 0; j < 15; j++) {
+                carton[i][j]=rnd.nextInt(99);
+                System.out.print(carton[i][j]+" ");
+            }
+            System.out.println("");
+        }
+        System.out.println("------------------------------");
+        
+        rnd.nextInt(99);
+        //Tirada
+        /*
+        do {
+            tirada[contirada]=rnd.nextInt(100);
+        } while (true);
+        
+        contirada++;
+        
+        
+        System.out.println("----------TIRADA----------");
+        System.out.println("Ha salido el número: "+tirada);
+        for (int i = 0; i < jugadores; i++) {
+            for (int j = 0; j < 15; j++) {
+                if (carton[i][j]==tirada) {
+                    carton [i][j]=0;
+                }
+            }
+        }
+                */
+    }
+    
+}
